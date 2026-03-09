@@ -1,5 +1,21 @@
 {
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Alt-Svc", "value": "clear" }
+      ]
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/auth-proxy/(.*)",
+      "destination": "https://identitytoolkit.googleapis.com/$1"
+    },
+    {
+      "source": "/token-proxy/(.*)",
+      "destination": "https://securetoken.googleapis.com/$1"
+    },
     {
       "source": "/v1/(.*)",
       "destination": "https://firestore.googleapis.com/v1/$1"
