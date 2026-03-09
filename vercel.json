@@ -12,16 +12,20 @@
   ],
   "rewrites": [
     {
-      "source": "/auth-proxy/(.*)",
-      "destination": "https://identitytoolkit.googleapis.com/$1"
+      "source": "/v1/accounts:(.*)",
+      "destination": "https://identitytoolkit.googleapis.com/v1/accounts:$1"
     },
     {
-      "source": "/token-proxy/(.*)",
-      "destination": "https://securetoken.googleapis.com/$1"
+      "source": "/v1/projects/(.*)",
+      "destination": "https://firestore.googleapis.com/v1/projects/$1"
     },
     {
-      "source": "/firestore-proxy/(.*)",
-      "destination": "https://firestore.googleapis.com/$1"
+      "source": "/google.firestore.v1.Firestore/(.*)",
+      "destination": "https://firestore.googleapis.com/google.firestore.v1.Firestore/$1"
+    },
+    {
+      "source": "/v1/token(.*)",
+      "destination": "https://securetoken.googleapis.com/v1/token$1"
     }
   ]
 }
