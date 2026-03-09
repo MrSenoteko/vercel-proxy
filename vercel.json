@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/v1/(.*)",
+      "destination": "https://firestore.googleapis.com/v1/$1"
+    },
+    {
+      "source": "/google.firestore.v1.Firestore/(.*)",
+      "destination": "https://firestore.googleapis.com/google.firestore.v1.Firestore/$1"
+    }
+  ]
+}
