@@ -3,6 +3,9 @@
     {
       "source": "/(.*)",
       "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, PATCH, DELETE, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "*" },
         { "key": "Alt-Svc", "value": "clear" }
       ]
     }
@@ -17,12 +20,8 @@
       "destination": "https://securetoken.googleapis.com/$1"
     },
     {
-      "source": "/v1/(.*)",
-      "destination": "https://firestore.googleapis.com/v1/$1"
-    },
-    {
-      "source": "/google.firestore.v1.Firestore/(.*)",
-      "destination": "https://firestore.googleapis.com/google.firestore.v1.Firestore/$1"
+      "source": "/firestore-proxy/(.*)",
+      "destination": "https://firestore.googleapis.com/$1"
     }
   ]
 }
